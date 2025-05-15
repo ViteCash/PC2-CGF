@@ -1,5 +1,4 @@
 :root {
-    /* Rojo oscuro/granate - para acciones principales y elementos destacados */
     --color-primary-50: #fef2f2;
     --color-primary-100: #fee2e2;
     --color-primary-200: #fecaca;
@@ -9,62 +8,57 @@
     --color-primary-600: #dc2626;
     --color-primary-700: #b91c1c;
     --color-primary-800: #991b1b;
-    --color-primary-900: #701510; /* Tu color requerido */
+    --color-primary-900: #701510;
     --color-primary-950: #450a0a;
 
-    /* Marrón cálido - para acciones secundarias o elementos complementarios */
-    --color-secondary-50: #faf6f3;
-    --color-secondary-100: #f5ebe5;
-    --color-secondary-200: #e8d4c7;
-    --color-secondary-300: #d8b9a5;
-    --color-secondary-400: #c49b80;
-    --color-secondary-500: #b07f61;
-    --color-secondary-600: #9c664a;
-    --color-secondary-700: #83503b;
-    --color-secondary-800: #6c4333;
-    --color-secondary-900: #5a392d;
-    --color-secondary-950: #2e1c15;
+    --color-secondary-50: #f2f9fd;
+    --color-secondary-100: #e4f1fa;
+    --color-secondary-200: #c3e3f5;
+    --color-secondary-300: #8fceeb;
+    --color-secondary-400: #55b3de;
+    --color-secondary-500: #2c96cf;
+    --color-secondary-600: #1e7bb0;
+    --color-secondary-700: #1b648f;
+    --color-secondary-800: #1c5476;
+    --color-secondary-900: #1c4762;
+    --color-secondary-950: #112c3f;
 
-    /* Naranja vibrante - para elementos de acento/llamados a la acción */
-    --color-tertiary-50: #fff7ed;
-    --color-tertiary-100: #ffeed3;
-    --color-tertiary-200: #fed9aa;
-    --color-tertiary-300: #fdc174;
-    --color-tertiary-400: #fb9d3d;
-    --color-tertiary-500: #f97316;
-    --color-tertiary-600: #ea580c;
-    --color-tertiary-700: #c2410c;
-    --color-tertiary-800: #9a3412;
-    --color-tertiary-900: #7c2d12;
-    --color-tertiary-950: #431407;
+    --color-tertiary-50: #fdf6ef;
+    --color-tertiary-100: #f9eadc;
+    --color-tertiary-200: #f3d4b6;
+    --color-tertiary-300: #eab786;
+    --color-tertiary-400: #e39456;
+    --color-tertiary-500: #db7231;
+    --color-tertiary-600: #cc5826;
+    --color-tertiary-700: #aa4120;
+    --color-tertiary-800: #8b351e;
+    --color-tertiary-900: #712e1c;
+    --color-tertiary-950: #3c150e;
 
-    /* Azul información - para consejos y tutoriales */
-    --color-info-50: #f0f9ff;
-    --color-info-100: #e0f2fe;
-    --color-info-200: #b9e6fe;
-    --color-info-300: #7cd4fd;
-    --color-info-400: #36bffa;
-    --color-info-500: #0ea5e9;
-    --color-info-600: #0284c7;
-    --color-info-700: #0369a1;
-    --color-info-800: #075985;
-    --color-info-900: #0c4a6e;
-    --color-info-950: #082f49;
+    --color-info-50: #eefbff;
+    --color-info-100: #d8f5fe;
+    --color-info-200: #b8edfe;
+    --color-info-300: #83e1fc;
+    --color-info-400: #49cdf8;
+    --color-info-500: #23b1f1;
+    --color-info-600: #128fe5;
+    --color-info-700: #1173c2;
+    --color-info-800: #155e9c;
+    --color-info-900: #174f7d;
+    --color-info-950: #103150;
 
-    /* Verde para confirmaciones y guardado exitoso */
-    --color-success-50: #f0fdf4;
-    --color-success-100: #dcfce7;
-    --color-success-200: #bbf7d0;
-    --color-success-300: #86efac;
-    --color-success-400: #4ade80;
-    --color-success-500: #22c55e;
-    --color-success-600: #16a34a;
-    --color-success-700: #15803d;
-    --color-success-800: #166534;
-    --color-success-900: #14532d;
-    --color-success-950: #052e16;
+    --color-success-50: #ecfdf5;
+    --color-success-100: #d1fae5;
+    --color-success-200: #a7f3d0;
+    --color-success-300: #6ee7b7;
+    --color-success-400: #34d399;
+    --color-success-500: #10b981;
+    --color-success-600: #059669;
+    --color-success-700: #047857;
+    --color-success-800: #065f46;
+    --color-success-900: #064e3b;
+    --color-success-950: #022c22;
 
-    /* Amarillo para notificaciones y alertas */
     --color-warning-50: #fffbeb;
     --color-warning-100: #fef3c7;
     --color-warning-200: #fde68a;
@@ -77,7 +71,6 @@
     --color-warning-900: #78350f;
     --color-warning-950: #451a03;
 
-    /* Rojo intenso para errores o borrar elementos */
     --color-error-50: #fef2f2;
     --color-error-100: #fee2e2;
     --color-error-200: #fecaca;
@@ -90,151 +83,5 @@
     --color-error-900: #7f1d1d;
     --color-error-950: #450a0a;
 
-    /* Superficie y colores de fondo neutros para áreas de dibujo */
     --color-surface: #ffffff;
-    --color-canvas: #f8f8f8;
-    --color-panel: #f0f0f0;
-
-    /* Grises para la interfaz - neutrales que no compiten con el contenido */
-    --color-neutral-50: #fafafa;
-    --color-neutral-100: #f4f4f5;
-    --color-neutral-200: #e4e4e7;
-    --color-neutral-300: #d4d4d8;
-    --color-neutral-400: #a1a1aa;
-    --color-neutral-500: #71717a;
-    --color-neutral-600: #52525b;
-    --color-neutral-700: #3f3f46;
-    --color-neutral-800: #27272a;
-    --color-neutral-900: #18181b;
-    --color-neutral-950: #09090b;
-
-    /* Colores para herramientas de dibujo - complementarios al rojo granate */
-    --color-brush-red: #ef4444;
-    --color-brush-burgundy: #701510; /* Tu color primario */
-    --color-brush-orange: #f97316;
-    --color-brush-gold: #eab308;
-    --color-brush-yellow: #facc15;
-    --color-brush-olive: #84cc16;
-    --color-brush-green: #22c55e;
-    --color-brush-teal: #14b8a6;
-    --color-brush-blue: #0ea5e9;
-    --color-brush-indigo: #6366f1;
-    --color-brush-purple: #a855f7;
-    --color-brush-pink: #ec4899;
-    --color-brush-brown: #9c664a;
-    --color-brush-black: #000000;
-    --color-brush-white: #ffffff;
-}
-
-.dark {
-    /* Versión oscura de los colores primarios - más saturados para destacar en fondo oscuro */
-    --color-primary-50: #450a0a;
-    --color-primary-100: #7f1d1d;
-    --color-primary-200: #991b1b;
-    --color-primary-300: #b91c1c;
-    --color-primary-400: #dc2626;
-    --color-primary-500: #ef4444;
-    --color-primary-600: #f87171;
-    --color-primary-700: #fca5a5;
-    --color-primary-800: #fecaca;
-    --color-primary-900: #fee2e2;
-    --color-primary-950: #fef2f2;
-
-    /* Versión oscura de los colores secundarios */
-    --color-secondary-50: #2e1c15;
-    --color-secondary-100: #5a392d;
-    --color-secondary-200: #6c4333;
-    --color-secondary-300: #83503b;
-    --color-secondary-400: #9c664a;
-    --color-secondary-500: #b07f61;
-    --color-secondary-600: #c49b80;
-    --color-secondary-700: #d8b9a5;
-    --color-secondary-800: #e8d4c7;
-    --color-secondary-900: #f5ebe5;
-    --color-secondary-950: #faf6f3;
-
-    /* Versión oscura de los colores terciarios */
-    --color-tertiary-50: #431407;
-    --color-tertiary-100: #7c2d12;
-    --color-tertiary-200: #9a3412;
-    --color-tertiary-300: #c2410c;
-    --color-tertiary-400: #ea580c;
-    --color-tertiary-500: #f97316;
-    --color-tertiary-600: #fb9d3d;
-    --color-tertiary-700: #fdc174;
-    --color-tertiary-800: #fed9aa;
-    --color-tertiary-900: #ffeed3;
-    --color-tertiary-950: #fff7ed;
-
-    /* Versión oscura de los colores de información */
-    --color-info-50: #082f49;
-    --color-info-100: #0c4a6e;
-    --color-info-200: #075985;
-    --color-info-300: #0369a1;
-    --color-info-400: #0284c7;
-    --color-info-500: #0ea5e9;
-    --color-info-600: #36bffa;
-    --color-info-700: #7cd4fd;
-    --color-info-800: #b9e6fe;
-    --color-info-900: #e0f2fe;
-    --color-info-950: #f0f9ff;
-
-    /* Versión oscura de los colores de éxito */
-    --color-success-50: #052e16;
-    --color-success-100: #14532d;
-    --color-success-200: #166534;
-    --color-success-300: #15803d;
-    --color-success-400: #16a34a;
-    --color-success-500: #22c55e;
-    --color-success-600: #4ade80;
-    --color-success-700: #86efac;
-    --color-success-800: #bbf7d0;
-    --color-success-900: #dcfce7;
-    --color-success-950: #f0fdf4;
-
-    /* Versión oscura de los colores de advertencia */
-    --color-warning-50: #451a03;
-    --color-warning-100: #78350f;
-    --color-warning-200: #92400e;
-    --color-warning-300: #b45309;
-    --color-warning-400: #d97706;
-    --color-warning-500: #f59e0b;
-    --color-warning-600: #fbbf24;
-    --color-warning-700: #fcd34d;
-    --color-warning-800: #fde68a;
-    --color-warning-900: #fef3c7;
-    --color-warning-950: #fffbeb;
-
-    /* Versión oscura de los colores de error */
-    --color-error-50: #450a0a;
-    --color-error-100: #7f1d1d;
-    --color-error-200: #991b1b;
-    --color-error-300: #b91c1c;
-    --color-error-400: #dc2626;
-    --color-error-500: #ef4444;
-    --color-error-600: #f87171;
-    --color-error-700: #fca5a5;
-    --color-error-800: #fecaca;
-    --color-error-900: #fee2e2;
-    --color-error-950: #fef2f2;
-
-    /* Superficie y colores de fondo para modo oscuro */
-    --color-surface: #18181b;
-    --color-canvas: #09090b;
-    --color-panel: #27272a;
-
-    /* Grises para la interfaz en modo oscuro */
-    --color-neutral-50: #09090b;
-    --color-neutral-100: #18181b;
-    --color-neutral-200: #27272a;
-    --color-neutral-300: #3f3f46;
-    --color-neutral-400: #52525b;
-    --color-neutral-500: #71717a;
-    --color-neutral-600: #a1a1aa;
-    --color-neutral-700: #d4d4d8;
-    --color-neutral-800: #e4e4e7;
-    --color-neutral-900: #f4f4f5;
-    --color-neutral-950: #fafafa;
-
-    /* Los colores de herramientas de dibujo se mantienen consistentes */
 }

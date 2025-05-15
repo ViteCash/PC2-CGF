@@ -32,7 +32,7 @@
             <h1 class="text-3xl font-bold">
                 Dibujando la letra <span class="text-4xl text-primary-500">U</span>
             </h1>
-            <p class="text-sm text-gray-600">Utiliza el panel a continuación para practicar</p>
+            <p class="text-sm">Utiliza el panel a continuación para practicar</p>
         </div>
         <CanvasDrawing
             @canvas-ready="setCanvas"

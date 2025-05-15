@@ -1,10 +1,10 @@
-@import "tailwindcss";
-@import "@nuxt/ui";
-@import "./colors.css";
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@import './colors.css';
 
 @theme static {
-	--font-sans: "DM Sans", sans-serif;
-	--font-sora: "Sora", sans-serif;
+    --font-sans: 'DM Sans', sans-serif;
+    --font-sora: 'Sora', sans-serif;
 }
 
 :root {
