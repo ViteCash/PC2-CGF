@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+@import "./colors.css";
+
+@theme static {
+	--font-sans: "DM Sans", sans-serif;
+	--font-sora: "Sora", sans-serif;
+}
+
+:root {
+    --ui-primary: var(--color-primary-500);
+    --ui-secondary: var(--color-secondary-500);
+    --ui-tertiary: var(--color-tertiary-500);
+    --ui-success: var(--color-success-500);
+    --ui-info: var(--color-info-500);
+    --ui-warning: var(--color-warning-500);
+    --ui-error: var(--color-error-500);
+    --ui-bg: var(--color-surface);
+}
