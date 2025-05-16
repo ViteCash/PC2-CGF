@@ -2,35 +2,11 @@
     <main
         class="flex flex-col gap-8 items-center justify-center h-full bg-[url(/bg-pattern.svg)] bg-repeat"
     >
-        <USlideover
-            title="Opciones"
-            :close="{
-                color: 'primary',
-                variant: 'outline'
-            }"
-        >
-            <UButton
-                icon="i-heroicons-bars-3"
-                variant="subtle"
-                size="xl"
-                class="absolute top-4 right-4 sm:top-8 sm:right-8"
-            />
-            <template #body>
-                <div class="flex flex-col items-start justify-center gap-8">
-                    <div class="flex flex-col items-start w-full gap-5">
-                        <span class="text-md font-semibold">Grosor</span>
-                        <USlider v-model="lineWidth" :min="1" :max="20" />
-                    </div>
-                    <div class="flex flex-col items-start w-full gap-5">
-                        <span class="text-md font-semibold">Color de trazo</span>
-                        <UColorPicker v-model="lineColor" />
-                    </div>
-                </div>
-            </template>
-        </USlideover>
+        <OptionsSlider v-model:line-width="lineWidth" v-model:line-color="lineColor" />
         <div class="flex flex-col items-center gap-3 bg-white">
             <h1 class="text-3xl font-bold">
-                Dibujando la letra <span class="text-4xl text-primary-500">U</span>
+                Dibujando la letra
+                <span class="text-4xl text-primary-500">{{ currentLetter.symbol }}</span>
             </h1>
             <p class="text-sm">Utiliza el panel a continuación para practicar</p>
         </div>
@@ -43,8 +19,11 @@
             @handleTouchMove="handleTouchMove"
         />
         <div class="flex justify-center gap-4 bg-white">
-            <UButton variant="ghost" icon="i-heroicons-sparkles" @click="clearCanvas">
+            <UButton variant="soft" icon="i-heroicons-trash" @click="clearCanvas">
                 Limpiar
+            </UButton>
+            <UButton variant="soft" icon="i-heroicons-arrow-path" @click="nextLetter">
+                Cambiar letra
             </UButton>
             <UButton icon="i-heroicons-paper-airplane" @click="submitDrawing"> Enviar </UButton>
         </div>
@@ -64,4 +43,6 @@ const {
     handleTouchStart,
     handleTouchMove
 } = useCanvasDrawing()
+
+const { currentLetter, nextLetter } = useUseGreekLetter()
 </script>

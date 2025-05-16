@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
 export const useCanvasDrawing = () => {
     const canvas = ref<HTMLCanvasElement | null>(null)
@@ -7,6 +7,8 @@ export const useCanvasDrawing = () => {
     const lineWidth = ref(5)
     const lineColor = ref('#000000')
     const lastPos = ref({ x: 0, y: 0 })
+
+    const { currentLetter, nextLetter } = useUseGreekLetter()
 
     const setCanvas = (canvasElement: HTMLCanvasElement) => {
         canvas.value = canvasElement
@@ -98,22 +100,19 @@ export const useCanvasDrawing = () => {
         }
     }
 
-    const submitDrawing = () => {
+    const submitDrawing = async () => {
         if (!canvas.value) return
 
-        // Obtener la imagen del canvas como base64
-        const imageData = canvas.value.toDataURL('image/png')
+        const fullDataURL = canvas.value.toDataURL('image/png')
+        const base64Img = fullDataURL.split(',')[1]
 
-        // Aquí puedes enviar los datos a tu backend
-        console.log('Enviando dibujo:', imageData.substring(0, 50) + '...')
+        await $fetch('/api/drawing', {
+            method: 'post',
+            body: { img: base64Img, tag: currentLetter.value.key }
+        })
 
-        // Por ejemplo, podrías hacer:
-        // await $fetch('/api/submit-drawing', {
-        //   method: 'POST',
-        //   body: { image: imageData }
-        // })
-
-        alert('¡Dibujo enviado con éxito!')
+        clearCanvas()
+        nextLetter()
     }
 
     return {
