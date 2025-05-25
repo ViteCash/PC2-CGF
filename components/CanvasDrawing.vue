@@ -1,7 +1,7 @@
 <template>
     <div
         style="touch-action: none"
-        class="relative w-full max-w-lg border border-primary-200 rounded-lg bg-white shadow-md overflow-hidden shadow-primary-100"
+        class="relative w-full border border-primary-200 rounded-lg bg-white shadow-md overflow-hidden shadow-primary-100"
     >
         <canvas
             ref="canvas"

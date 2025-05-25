@@ -8,9 +8,9 @@ export default defineEventHandler(async event => {
 
         if (!img || !tag) {
             return {
-                status: 400,
-                body: { error: 'Faltan datos requeridos (imagen o tag)' }
-            }
+                success: false,
+                body: { message: 'Faltan datos requeridos (imagen o tag)' }
+            } as ResponseRequest
         }
 
         const connection = await getConnection()
@@ -24,25 +24,25 @@ export default defineEventHandler(async event => {
             await connection.end()
 
             return {
-                status: 200,
+                success: true,
                 body: {
                     message: `Imagen guardada correctamente con el tag: ${tag}`
                 }
-            }
+            } as ResponseRequest
         } catch (dbError: any) {
             console.error('Error al guardar en la base de datos:', dbError)
             await connection.end()
 
             return {
-                status: 500,
-                body: { error: 'Error al guardar en la base de datos', details: dbError.message }
-            }
+                success: false,
+                body: { message: 'Error al guardar en la base de datos', details: dbError.message }
+            } as ResponseRequest
         }
     } catch (error: any) {
         console.error('Error general:', error)
         return {
-            status: 500,
-            body: { error: 'Error interno del servidor', details: error.message }
-        }
+            success: false,
+            body: { message: 'Error interno del servidor', details: error.message }
+        } as ResponseRequest
     }
 })

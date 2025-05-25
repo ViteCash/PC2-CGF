@@ -3,12 +3,16 @@ import { ref } from 'vue'
 export const useCanvasDrawing = () => {
     const canvas = ref<HTMLCanvasElement | null>(null)
     const ctx = ref<CanvasRenderingContext2D | null>(null)
-    const isDrawing = ref(false)
-    const lineWidth = ref(5)
-    const lineColor = ref('#000000')
+
+    const lineColor = ref('#701510')
     const lastPos = ref({ x: 0, y: 0 })
 
-    const { currentLetter, nextLetter } = useUseGreekLetter()
+    const isDrawing = ref(false)
+    const lineWidth = ref(5)
+    const isLoading = ref(false)
+
+    const toast = useToast()
+    const { currentLetter, nextLetter } = useKanjiSymbol()
 
     const setCanvas = (canvasElement: HTMLCanvasElement) => {
         canvas.value = canvasElement
@@ -101,18 +105,46 @@ export const useCanvasDrawing = () => {
     }
 
     const submitDrawing = async () => {
+        isLoading.value = true
+
         if (!canvas.value) return
 
         const fullDataURL = canvas.value.toDataURL('image/png')
         const base64Img = fullDataURL.split(',')[1]
 
-        await $fetch('/api/drawing', {
+        const response = await $fetch('/api/submitDrawing', {
             method: 'post',
             body: { img: base64Img, tag: currentLetter.value.key }
         })
 
+        if (!response.success) {
+            isLoading.value = false
+            toast.add({
+                title: response.body.message,
+                description: response.body.details,
+                icon: 'i-heroicons-x-circle',
+                color: 'error'
+            })
+            return
+        }
+
+        isLoading.value = false
         clearCanvas()
         nextLetter()
+    }
+
+    const predictDrawing = async () => {
+        if (!canvas.value) return
+
+        const fullDataURL = canvas.value.toDataURL('image/png')
+        const base64Img = fullDataURL.split(',')[1]
+
+        const response = await $fetch('/api/drawing/predict', {
+            method: 'post',
+            body: { img: base64Img }
+        })
+
+        return response
     }
 
     return {
@@ -120,10 +152,9 @@ export const useCanvasDrawing = () => {
         setCanvas,
         ctx,
         isDrawing,
-        lineWidth,
-        lineColor,
         startDrawing,
         draw,
+        isLoading,
         stopDrawing,
         handleTouchStart,
         handleTouchMove,
