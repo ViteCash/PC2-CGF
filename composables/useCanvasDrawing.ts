@@ -109,7 +109,7 @@ export const useCanvasDrawing = () => {
 
         if (!canvas.value) return
 
-        const fullDataURL = canvas.value.toDataURL('image/png')
+        const fullDataURL = canvas.value.toDataURL('image/png', 0.7)
         const base64Img = fullDataURL.split(',')[1]
 
         const response = await $fetch('/api/submitDrawing', {
