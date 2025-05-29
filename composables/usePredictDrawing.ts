@@ -4,6 +4,7 @@ import { ref } from 'vue'
 export const usePredictDrawing = (canvas: Ref<HTMLCanvasElement | null>) => {
     const isSubmitting = ref(false)
     const prediction = ref({} as PredictionResponse)
+    const config = useRuntimeConfig()
 
     const { clearCanvas } = useCanvasDrawing()
 
@@ -49,7 +50,7 @@ export const usePredictDrawing = (canvas: Ref<HTMLCanvasElement | null>) => {
         const fullDataURL = canvas.value.toDataURL('image/png')
         const base64Img = fullDataURL.split(',')[1]
 
-        const response: PredictionResponse = await $fetch('http://localhost:4000/predict', {
+        const response: PredictionResponse = await $fetch(`${config.public.apiBase}/predict`, {
             method: 'post',
             body: { image: base64Img }
         })
