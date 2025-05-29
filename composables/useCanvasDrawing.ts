@@ -133,19 +133,6 @@ export const useCanvasDrawing = () => {
         nextLetter()
     }
 
-    const predictDrawing = async () => {
-        if (!canvas.value) return
-
-        const fullDataURL = canvas.value.toDataURL('image/png')
-        const base64Img = fullDataURL.split(',')[1]
-        const response = await $fetch('/api/drawing/predict', {
-            method: 'post',
-            body: { img: base64Img }
-        })
-
-        return response
-    }
-
     return {
         canvas,
         setCanvas,
